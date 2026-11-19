@@ -1,0 +1,16 @@
+import { Modal, Button } from 'react-bootstrap'
+
+export default function ConfirmModal({ show, title, text, onConfirm, onClose }) {
+  return (
+    <Modal show={show} onHide={onClose} centered>
+      <Modal.Header closeButton>
+        <Modal.Title>{title}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>{text}</Modal.Body>
+      <Modal.Footer>
+        <Button variant='secondary' onClick={onClose}>Annuler</Button>
+        <Button variant='primary' onClick={onConfirm}>Confirmer</Button>
+      </Modal.Footer>
+    </Modal>
+  )
+}
